@@ -89,7 +89,7 @@ function storeReview(req, res) {
 
     const sql = `INSERT INTO reviews (text, name, vote, movie_id ) VALUES (?, ?, ?, ?)`;
 
-    connection.query(sql, [name, text, vote, id], (err, results) => {
+    connection.query(sql, [text, name, vote, id], (err, results) => {
 
         if (err) return res.status(500).json({ message: 'query al database non è andata a buon fine' });
 
